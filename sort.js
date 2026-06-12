@@ -14,6 +14,12 @@ export function sortProducts(items, sortValue) {
     case "rating-low":
       sorted.sort((a, b) => a.rating - b.rating);
       break;
+    case "reviews-high":
+      sorted.sort((a, b) => b.reviewsCount - a.reviewsCount);
+      break;
+    case "reviews-low":
+      sorted.sort((a, b) => a.reviewsCount - b.reviewsCount);
+      break;
     default:
       // Default sorting (original order)
       break;
