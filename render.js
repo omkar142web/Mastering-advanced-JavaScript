@@ -26,7 +26,7 @@ export function renderProducts(items, totalCount) {
           ${product.description}
         </p>
         <div class="product-price">
-          $${product.price}
+          ₹${product.price}
         </div>
         <div class="product-rating">
           ⭐ ${product.rating} <span>(${product.reviewsCount})</span>
