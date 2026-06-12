@@ -167,13 +167,21 @@
         border-radius: 4px;
       }
 
-      .product-img-placeholder {
-        height: 160px;
+      .product-img-container {
+        height: 180px;
         background-color: #f1f5f9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
+        overflow: hidden;
+      }
+
+      .product-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .product-card:hover .product-img {
+        transform: scale(1.05);
       }
 
       .product-info {
@@ -202,6 +210,27 @@
         font-weight: 700;
         color: #4f46e5;
         margin-top: auto;
+      }
+
+      .product-rating {
+        position: absolute;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.2rem 0.5rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #fbbf24;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      }
+
+      .product-rating span {
+        color: #64748b;
+        font-weight: 400;
       }
 
       /* Utilities for JS */
@@ -264,6 +293,14 @@
             <input type="checkbox" class="category-filter" value="audio" />
             Audio
           </label>
+          <label class="filter-label">
+            <input type="checkbox" class="category-filter" value="monitor" />
+            Monitors
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" class="category-filter" value="accessories" />
+            Accessories
+          </label>
         </div>
 
         <hr />
@@ -273,59 +310,18 @@
           <option value="default">Default</option>
           <option value="low-high">Price: Low to High</option>
           <option value="high-low">Price: High to Low</option>
+          <option value="rating-high">Rating: High to Low</option>
+          <option value="rating-low">Rating: Low to High</option>
         </select>
       </aside>
 
       <main class="main-content">
         <div class="results-count">
-          Showing <span id="count-num">4</span> products
+          Showing <span id="count-num">0</span> products
         </div>
 
         <div class="product-grid" id="product-grid">
-          <div class="product-card" data-category="keyboard" data-price="129">
-            <div class="product-badge">Hot</div>
-            <div class="product-img-placeholder">⌨️</div>
-            <div class="product-info">
-              <h4 class="product-title">Mechanical Cyber Keyboard</h4>
-              <p class="product-desc">
-                Hot-swappable linear switches with vibrant RGB lighting.
-              </p>
-              <div class="product-price">$129</div>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="mouse" data-price="79">
-            <div class="product-img-placeholder">🖱️</div>
-            <div class="product-info">
-              <h4 class="product-title">Wireless Precision Mouse</h4>
-              <p class="product-desc">
-                Ergonomic design with an ultra-accurate 26k DPI sensor.
-              </p>
-              <div class="product-price">$79</div>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="audio" data-price="199">
-            <div class="product-img-placeholder">🎧</div>
-            <div class="product-info">
-              <h4 class="product-title">Studio ANC Headphones</h4>
-              <p class="product-desc">
-                Active noise cancellation with high-fidelity spatial audio.
-              </p>
-              <div class="product-price">$199</div>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="keyboard" data-price="89">
-            <div class="product-img-placeholder">⌨️</div>
-            <div class="product-info">
-              <h4 class="product-title">Compact 60% Mini Keyboard</h4>
-              <p class="product-desc">
-                Space-saving layout perfect for minimalist desk setups.
-              </p>
-              <div class="product-price">$89</div>
-            </div>
-          </div>
+          <!-- Products will be rendered here dynamically -->
         </div>
 
         <div id="no-results" class="hidden">
@@ -333,5 +329,7 @@
         </div>
       </main>
     </div>
+
+    <script type="module" src="main.js"></script>
   </body>
 </html>
