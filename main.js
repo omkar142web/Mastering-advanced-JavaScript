@@ -12,6 +12,7 @@ let currentSort = "default";
 
 // Select DOM Elements
 const searchInput = document.getElementById("search-input");
+const clearSearchBtn = document.getElementById("clear-search");
 const categoryFilters = document.querySelectorAll(".category-filter");
 const noResults = document.getElementById("no-results");
 
@@ -27,6 +28,11 @@ function updateList() {
   const selectedCategories = Array.from(categoryFilters)
     .filter((cb) => cb.checked)
     .map((cb) => cb.value);
+
+  // Toggle clear button visibility
+  if (clearSearchBtn) {
+    clearSearchBtn.classList.toggle("visible", searchTerm.length > 0);
+  }
 
   // Reset pagination when filters change
   currentPage = 1;
@@ -57,6 +63,15 @@ function loadMore() {
   }
 }
 
+// Clear Search Logic
+if (clearSearchBtn) {
+  clearSearchBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    updateList();
+    searchInput.focus();
+  });
+}
+
 // Custom Dropdown Logic
 if (sortButton) {
   sortButton.addEventListener("click", (e) => {
@@ -67,7 +82,9 @@ if (sortButton) {
 
 // Close dropdown when clicking outside
 document.addEventListener("click", () => {
-  sortContainer.classList.remove("open");
+  if (sortContainer) {
+    sortContainer.classList.remove("open");
+  }
 });
 
 sortItems.forEach(item => {
