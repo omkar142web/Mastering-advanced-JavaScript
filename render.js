@@ -22,15 +22,9 @@ export function renderProducts(items, totalCount) {
       </div>
       <div class="product-info">
         <h4 class="product-title">${product.title}</h4>
-        <p class="product-desc">
-          ${product.description}
-        </p>
-        <div class="product-price">
-          ₹${product.price}
-        </div>
-        <div class="product-rating">
-          ⭐ ${product.rating} <span>(${product.reviewsCount})</span>
-        </div>
+        <p class="product-desc">${product.description}</p>
+        <div class="product-price">₹${product.price}</div>
+        <div class="product-rating">⭐ ${product.rating} <span>(${product.reviewsCount})</span></div>
       </div>
     `;
 
