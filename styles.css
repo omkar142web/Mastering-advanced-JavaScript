@@ -135,6 +135,9 @@ body {
   height: fit-content;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
+  position: sticky;
+  top: 6rem; /* Spacing below sticky navbar */
+  align-self: flex-start;
 }
 
 .sidebar h3 {
@@ -499,10 +502,13 @@ body {
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
+    margin: 1.5rem auto;
   }
   .sidebar {
     flex: none;
     width: 100%;
+    position: relative; /* Disable sticky on tablet/mobile */
+    top: 0;
   }
 }
 
