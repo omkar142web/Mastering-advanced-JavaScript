@@ -1,0 +1,474 @@
+const products = [
+  // Keyboards
+  {
+    id: "prod-001",
+    title: "Aura RGB Mechanical Keyboard",
+    description: "Premium hot-swappable linear switches with fully customizable per-key RGB lighting and a sleek aluminum frame.",
+    price: 149,
+    category: "keyboard",
+    image: "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&q=80&w=400",
+    badge: "Hot",
+    rating: 4.8,
+    reviewsCount: 124,
+    inStock: true,
+  },
+  {
+    id: "prod-004",
+    title: "Ghost White 60% Wireless Keyboard",
+    description: "Ultra-compact minimalist design with dual-mode wireless connectivity and long-lasting battery life for clean desk setups.",
+    price: 99,
+    category: "keyboard",
+    image: "https://images.openai.com/static-rsc-4/Xhtwu5f1taZUbSHs6jcxxWXGRSQKlFJnVfAGOSZ_Abw2zN_rVgX_VDfPinRLw5a19YRZIDoS7X-D4qgI9dOp9OGEpxWWylrrZffcWfdxFyL9o6UTCEAU9kXn0y_CCaIKRZZ7toxBgJdV4dKyBChWYOxwdJDlzuTlIQI1DKNN_djVgJ2gN4zpt0ERnrJgOi0U?purpose=fullsize",
+    badge: "Sale",
+    rating: 4.2,
+    reviewsCount: 45,
+    inStock: true,
+  },
+  {
+    id: "prod-005",
+    title: "Zenith Split Ergonomic Mechanical",
+    description: "Advanced split design that promotes a neutral wrist position, featuring tactile switches and programmable macro layers.",
+    price: 189,
+    category: "keyboard",
+    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&q=80&w=400",
+    badge: "New",
+    rating: 4.7,
+    reviewsCount: 32,
+    inStock: true,
+  },
+  {
+    id: "prod-006",
+    title: "Retro-Luxe Typewriter Keyboard",
+    description: "Modern mechanical performance meets vintage aesthetics with satisfying clicky switches and round chrome-accented keycaps.",
+    price: 125,
+    category: "keyboard",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRWlOUJeRjr-uP1sQlpSZ66tQTyMSk2wDVWuYs87DrcYxfl67WMOylpNBn-DlAE7QE7Hk0K6ugeBixCXZAmWJtW5y3tgPvkjy2g2XWDu1k",
+    badge: null,
+    rating: 4.4,
+    reviewsCount: 67,
+    inStock: true,
+  },
+
+  // Mice
+  {
+    id: "prod-002",
+    title: "PrecisionPro Wireless Mouse",
+    description: "High-performance productivity mouse with a 26k DPI sensor, infinite scroll wheel, and ergonomic thumb rest.",
+    price: 89,
+    category: "mouse",
+    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&q=80&w=400",
+    badge: null,
+    rating: 4.5,
+    reviewsCount: 88,
+    inStock: true,
+  },
+  {
+    id: "prod-007",
+    title: "SwiftGlide Ultra-Light Gaming Mouse",
+    description: "Engineered for speed with a 55g honeycombed shell, PTFE feet, and a zero-latency optical sensor.",
+    price: 75,
+    category: "mouse",
+    image: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&q=80&w=400",
+    badge: "Pro",
+    rating: 4.9,
+    reviewsCount: 156,
+    inStock: true,
+  },
+  {
+    id: "prod-008",
+    title: "QuietCore Silent Office Mouse",
+    description: "Reduced-noise switches that provide a satisfying tactile feel without the loud click, ideal for quiet office environments.",
+    price: 45,
+    category: "mouse",
+    image: "https://images.unsplash.com/photo-1613141411244-0e4ac259d217?auto=format&fit=crop&q=80&w=400",
+    badge: null,
+    rating: 4.1,
+    reviewsCount: 230,
+    inStock: true,
+  },
+
+  // Audio
+  {
+    id: "prod-003",
+    title: "HifiOne Studio ANC Headphones",
+    description: "Premium over-ear headphones featuring adaptive noise cancellation and studio-grade spatial audio drivers.",
+    price: 249,
+    category: "audio",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=400",
+    badge: null,
+    rating: 4.9,
+    reviewsCount: 210,
+    inStock: false,
+  },
+  {
+    id: "prod-009",
+    title: "SonarPulse 7.1 Surround Gaming Headset",
+    description: "Immersive 7.1 surround sound with a noise-canceling broadcast-quality microphone and memory foam ear cushions.",
+    price: 135,
+    category: "audio",
+    image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&q=80&w=400",
+    badge: "Top Rated",
+    rating: 4.6,
+    reviewsCount: 95,
+    inStock: true,
+  },
+  {
+    id: "prod-010",
+    title: "SonicBuds Pro True Wireless Earbuds",
+    description: "Compact wireless earbuds with active noise cancellation, sweat resistance, and up to 30 hours of total battery life.",
+    price: 69,
+    category: "audio",
+    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=400",
+    badge: "Sale",
+    rating: 4.3,
+    reviewsCount: 312,
+    inStock: true,
+  },
+
+  // Monitors
+  {
+    id: "prod-011",
+    title: "VistaCurve 32\" 4K HDR Monitor",
+    description: "Stunning 4K resolution with HDR10 support and a 1500R curvature for an immersive gaming and viewing experience.",
+    price: 499,
+    category: "monitor",
+    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&q=80&w=400",
+    badge: "Premium",
+    rating: 4.8,
+    reviewsCount: 42,
+    inStock: true,
+  },
+  {
+    id: "prod-012",
+    title: "HorizonWide 34\" Curved Productivity Screen",
+    description: "Ultra-wide 21:9 aspect ratio with WQHD resolution, perfect for high-efficiency multitasking and creative workflows.",
+    price: 429,
+    category: "monitor",
+    image: "https://plus.unsplash.com/premium_photo-1669380425564-6e1a281a4d30?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    badge: null,
+    rating: 4.5,
+    reviewsCount: 28,
+    inStock: true,
+  },
+
+  // Accessories
+  {
+    id: "prod-013",
+    title: "Lumina RGB Extended Desk Mat",
+    description: "Massive waterproof surface with 12 customizable RGB lighting modes and a non-slip rubber base.",
+    price: 35,
+    category: "accessories",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRUC-2-OIVL6XrOfL9mEJyD9x0q5QXaP5dR35RPmDgIAl41x402huoA4nNeKIhVp63965wwZeqm6cZeUAXU7YV2LuO6W3-RcMJjbuYaP2-MuEhmdsfCsn_i",
+    badge: null,
+    rating: 4.7,
+    reviewsCount: 180,
+    inStock: true,
+  },
+  {
+    id: "prod-014",
+    title: "TitanFlex Heavy-Duty Monitor Arm",
+    description: "Fully adjustable gas spring arm that supports up to 34\" monitors with smooth 360-degree rotation and tilt.",
+    price: 79,
+    category: "accessories",
+    image: "https://ebco.in/_next/image?url=https%3A%2F%2Fdashboard.ebco.in%2Fwp-content%2Fuploads%2F2021%2F11%2FComputer-monitor-arm-2-edge-mount-img-1A.png&w=640&q=75",
+    badge: null,
+    rating: 4.6,
+    reviewsCount: 54,
+    inStock: true,
+  },
+  {
+    id: "prod-015",
+    title: "Radiance Pro Streamer Light Kit",
+    description: "Professional-grade key light with adjustable color temperature and brightness via integrated controls.",
+    price: 115,
+    category: "accessories",
+    image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSswnxetbocXQOGQ54XQvPfgbdPVCW_c_gsgEabvK4jJv2CqqbiKI4C6yX47Edp4Ji0a4rL-C9WIwBj9utChTliPykFsRr8w6XVLg65U3eIUDLT8_OGdQa5jw",
+    badge: "New",
+    rating: 4.4,
+    reviewsCount: 19,
+    inStock: true,
+  },
+  {
+    id: "prod-016",
+    title: "Orthopedic Vertical Ergo Mouse",
+    description: "Scientifically designed vertical mouse that reduces forearm twisting and muscle strain during long work days.",
+    price: 59,
+    category: "mouse",
+    image: "https://m.media-amazon.com/images/I/51udu9evLGL.jpg",
+    badge: null,
+    rating: 4.3,
+    reviewsCount: 110,
+    inStock: true,
+  },
+  {
+    id: "prod-017",
+    title: "MacroCore 17-Key Mechanical Numpad",
+    description: "Dedicated mechanical keypad with programmable macro support and PBT keycaps for intense data entry or gaming.",
+    price: 55,
+    category: "keyboard",
+    image: "https://m.media-amazon.com/images/I/61FU2CZODcL.jpg",
+    badge: null,
+    rating: 4.2,
+    reviewsCount: 24,
+    inStock: true,
+  },
+  {
+    id: "prod-018",
+    title: "AudioEdge 2.0 Hi-Fi Desktop Speakers",
+    description: "High-fidelity bookshelf speakers with balanced acoustics, deep bass response, and elegant wood-grain finish.",
+    price: 85,
+    category: "audio",
+    image: "https://images.unsplash.com/photo-1545048702-79362596cdc9?auto=format&fit=crop&q=80&w=400",
+    badge: null,
+    rating: 4.5,
+    reviewsCount: 76,
+    inStock: true,
+  },
+  {
+    id: "prod-019",
+    title: "StreamFocus 1080p HDR Pro Webcam",
+    description: "Full HD webcam with HDR support, auto-focus, and a built-in ring light for professional-quality streaming.",
+    price: 95,
+    category: "accessories",
+    image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTutwYhgRGBfY68js8O8SNAi6VtqDxJRPjp9T6i4HskR5uKIqPZbQNxK8JgtrOdmTJBlEd4JDDXsPlz8K8QDj7AeVhUJe11-y9q-LeLPVKX1ncCrDzCyjVH",
+    badge: null,
+    rating: 4.4,
+    reviewsCount: 48,
+    inStock: true,
+  },
+  {
+    id: "prod-020",
+    title: "CloudComfort Premium XL Lap Desk",
+    description: "Extra-large lap desk with a breathable dual-bolster cushion and integrated phone slot for ultimate comfort.",
+    price: 49,
+    category: "accessories",
+    image: "https://images.unsplash.com/photo-1603484477859-abe6a73f9366?auto=format&fit=crop&q=80&w=400",
+    badge: null,
+    rating: 4.6,
+    reviewsCount: 125,
+    inStock: true,
+  },
+];
+
+// Filtering Logic
+function filterProducts(products, searchTerm, selectedCategories) {
+  const term = searchTerm.toLowerCase();
+
+  return products.filter((product) => {
+    const matchesSearch =
+      product.title.toLowerCase().includes(term) ||
+      product.description.toLowerCase().includes(term);
+
+    const matchesCategory =
+      selectedCategories.length === 0 ||
+      selectedCategories.includes(product.category);
+
+    return matchesSearch && matchesCategory;
+  });
+}
+
+// Sorting Logic
+function sortProducts(items, sortValue) {
+  const sorted = [...items];
+
+  switch (sortValue) {
+    case "low-high":
+      sorted.sort((a, b) => a.price - b.price);
+      break;
+    case "high-low":
+      sorted.sort((a, b) => b.price - a.price);
+      break;
+    case "rating-high":
+      sorted.sort((a, b) => b.rating - a.rating);
+      break;
+    case "rating-low":
+      sorted.sort((a, b) => a.rating - b.rating);
+      break;
+    case "reviews-high":
+      sorted.sort((a, b) => b.reviewsCount - a.reviewsCount);
+      break;
+    case "reviews-low":
+      sorted.sort((a, b) => a.reviewsCount - b.reviewsCount);
+      break;
+    default:
+      // Default sorting (original order)
+      break;
+  }
+
+  return sorted;
+}
+
+// DOM Rendering Logic
+const productGrid = document.getElementById("product-grid");
+const countNum = document.getElementById("count-num");
+
+function renderProducts(items, totalCount) {
+  if (!productGrid || !countNum) return;
+
+  productGrid.innerHTML = "";
+
+  items.forEach((product) => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+
+    card.innerHTML = `
+      ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ""}
+      <div class="product-img-container">
+        <img src="${product.image}" alt="${product.title}" class="product-img" loading="lazy">
+      </div>
+      <div class="product-info">
+        <h4 class="product-title">${product.title}</h4>
+        <p class="product-desc">${product.description}</p>
+        <div class="product-price">₹${product.price}</div>
+        <div class="product-rating">⭐ ${product.rating} <span>(${product.reviewsCount})</span></div>
+      </div>
+    `;
+
+    productGrid.appendChild(card);
+  });
+
+  // Show "Showing X of Y" or just X
+  countNum.textContent = `${items.length} of ${totalCount}`;
+}
+
+// Infinite Scroll Logic
+function setupInfiniteScroll(callback, threshold = 100) {
+  let isThrottled = false;
+
+  const handleScroll = () => {
+    if (isThrottled) return;
+
+    isThrottled = true;
+
+    requestAnimationFrame(() => {
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+      if (scrollTop + clientHeight >= scrollHeight - threshold) {
+        callback();
+      }
+      isThrottled = false;
+    });
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}
+
+// Main Orchestration
+// State
+const ITEMS_PER_PAGE = 6;
+let currentPage = 1;
+let filteredAndSortedProducts = [];
+let currentSort = "default";
+
+// Select DOM Elements
+const searchInput = document.getElementById("search-input");
+const clearSearchBtn = document.getElementById("clear-search");
+const categoryFilters = document.querySelectorAll(".category-filter");
+const noResults = document.getElementById("no-results");
+
+// Custom Sort Dropdown Elements
+const sortContainer = document.querySelector(".sort-container");
+const sortButton = document.getElementById("sort-button");
+const sortDropdown = document.getElementById("sort-dropdown");
+const selectedSortText = document.getElementById("selected-sort");
+const sortItems = document.querySelectorAll("#sort-dropdown li");
+
+function updateList() {
+  const searchTerm = searchInput.value;
+  const selectedCategories = Array.from(categoryFilters)
+    .filter((cb) => cb.checked)
+    .map((cb) => cb.value);
+
+  // Toggle clear button visibility
+  if (clearSearchBtn) {
+    clearSearchBtn.classList.toggle("visible", searchTerm.length > 0);
+  }
+
+  // Reset pagination when filters change
+  currentPage = 1;
+
+  filteredAndSortedProducts = filterProducts(products, searchTerm, selectedCategories);
+  filteredAndSortedProducts = sortProducts(filteredAndSortedProducts, currentSort);
+
+  renderCurrentView();
+
+  if (noResults) {
+    noResults.classList.toggle("hidden", filteredAndSortedProducts.length !== 0);
+  }
+}
+
+function renderCurrentView() {
+  const end = currentPage * ITEMS_PER_PAGE;
+  const visibleProducts = filteredAndSortedProducts.slice(0, end);
+  
+  renderProducts(visibleProducts, filteredAndSortedProducts.length);
+}
+
+function loadMore() {
+  const totalPages = Math.ceil(filteredAndSortedProducts.length / ITEMS_PER_PAGE);
+  
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderCurrentView();
+  }
+}
+
+// Clear Search Logic
+if (clearSearchBtn) {
+  clearSearchBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    updateList();
+    searchInput.focus();
+  });
+}
+
+// Custom Dropdown Logic
+if (sortButton) {
+  sortButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    sortContainer.classList.toggle("open");
+  });
+}
+
+// Close dropdown when clicking outside
+document.addEventListener("click", () => {
+  if (sortContainer) {
+    sortContainer.classList.remove("open");
+  }
+});
+
+sortItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const val = item.getAttribute("data-value");
+    const label = item.textContent;
+
+    // Update State
+    currentSort = val;
+    selectedSortText.textContent = label;
+
+    // Update active class
+    sortItems.forEach(i => i.classList.remove("active"));
+    item.classList.add("active");
+
+    // Close and update
+    sortContainer.classList.remove("open");
+    updateList();
+  });
+});
+
+// Event Listeners for Filters
+if (searchInput) {
+  searchInput.addEventListener("input", updateList);
+}
+
+categoryFilters.forEach((filter) => {
+  filter.addEventListener("change", updateList);
+});
+
+// Initialize Infinite Scroll
+setupInfiniteScroll(loadMore);
+
+// Initial Render
+updateList();
